@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 May 2026 16:34:52 +0600</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cs</title>
+      <link>https://example.org/tags/cs/</link>
+      <pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
+      <guid>https://example.org/tags/cs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ls</title>
+      <link>https://example.org/tags/ls/</link>
+      <pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
+      <guid>https://example.org/tags/ls/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Note</title>
+      <link>https://example.org/tags/note/</link>
+      <pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
+      <guid>https://example.org/tags/note/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blue-Team</title>
+      <link>https://example.org/tags/blue-team/</link>
+      <pubDate>Wed, 13 May 2026 15:00:29 +0600</pubDate>
+      <guid>https://example.org/tags/blue-team/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardening</title>
+      <link>https://example.org/tags/hardening/</link>
+      <pubDate>Wed, 13 May 2026 15:00:29 +0600</pubDate>
+      <guid>https://example.org/tags/hardening/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab</title>
+      <link>https://example.org/tags/lab/</link>
+      <pubDate>Wed, 13 May 2026 15:00:29 +0600</pubDate>
+      <guid>https://example.org/tags/lab/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
