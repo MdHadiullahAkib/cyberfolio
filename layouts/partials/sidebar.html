@@ -1,0 +1,25 @@
+
+<aside id="side-nav" class="side-nav">
+  <div class="side-block">
+    <h4>In this section</h4>
+    <ul class="section-list">
+      {{ $section := .Section }}
+      {{ range where .Site.RegularPages "Section" $section }}
+        <li class="{{ if eq .Permalink $.Permalink }}current{{ end }}">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="side-block">
+    <h4>On this page</h4>
+    <div class="page-toc">
+      {{ with .TableOfContents }}
+        {{ . | safeHTML }}
+      {{ else }}
+        <p class="toc-empty">No headings on this page.</p>
+      {{ end }}
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="post">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <div class="meta">
+      {{ .Date.Format "2006-01-02" }} • {{ partial "tag-list.html" . }}
+    </div>
+  </header>
+  <section class="content">{{ .Content }}</section>
+
+  {{ if eq .Type "lab" }}
+  <aside class="lab-summary">
+    <h3>Lab summary</h3>
+    <ul>
+      <li><strong>Difficulty:</strong> {{ .Params.difficulty }}</li>
+      <li>
+        <strong>VMs:</strong> {{ range .Params.vms }}
+        <div>{{ .name }} ({{ .ip }})</div>
+        {{ end }}
+      </li>
+    </ul>
+  </aside>
+  {{ end }}
+</article>
+
+{{ partial "post-navigation.html" . }}
+
+{{ end }}

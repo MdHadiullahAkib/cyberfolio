@@ -1,0 +1,8 @@
+<div class="vm-card">
+  <strong>{{ .Get "name" }}</strong>
+  {{ with .Get "ip" }}
+  <div>IP: {{ . }}</div>
+  {{ end }} {{ with .Get "os" }}
+  <div>OS: {{ . }}</div>
+  {{ end }} {{ .Inner }}
+</div>

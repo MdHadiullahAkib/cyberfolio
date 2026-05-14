@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+<ul class="post-list">
+  {{ range .Pages }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="meta">
+      {{ .Date.Format "2006-01-02" }} • {{ with .Params.difficulty }}{{ . }}{{
+      end }}
+    </div>
+    <p>{{ .Summary }}</p>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

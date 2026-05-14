@@ -1,0 +1,18 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
+<meta
+  name="description"
+  content="{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+/>
+<!-- Google Font (Inter) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Optional: syntax highlighting (choose one) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+
+<!-- Favicons / theme color (optional) -->
+<meta name="theme-color" content="#061021">
+
+<!-- Prefetch/Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,18 @@
+<nav class="post-nav">
+  {{ $prev := .PrevInSection }}
+  {{ $next := .NextInSection }}
+  <div class="nav-row">
+    {{ if $prev }}
+    <a class="prev" href="{{ $prev.RelPermalink }}" title="{{ $prev.Title }}">
+      ← <span class="label">Previous</span>
+      <strong class="title">{{ $prev.Title }}</strong>
+    </a>
+    {{ end }}
+    {{ if $next }}
+    <a class="next" href="{{ $next.RelPermalink }}" title="{{ $next.Title }}">
+      <span class="label">Next</span> →
+      <strong class="title">{{ $next.Title }}</strong>
+    </a>
+    {{ end }}
+  </div>
+</nav>
