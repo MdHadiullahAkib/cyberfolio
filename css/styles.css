@@ -12,6 +12,8 @@ body{
   line-height:1.6; -webkit-tap-highlight-color:transparent;
 }
 
+a{color: var(--muted);}
+
 /* container */
 .wrap{max-width:var(--maxw); margin:0 auto; padding:1.25rem}
 
@@ -134,6 +136,20 @@ pre::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
 
 /* Ensure nested pre tags within responsive tables stay contained */
 table pre { max-width: 100%; overflow-x: auto; }
+
+
+/* Resume home layout */
+.resume-home .name{font-size:1.6rem;margin:0;color:var(--text)}
+.resume-home .tagline{color:var(--muted);margin:.4rem 0 1rem}
+.resume-grid{display:grid;grid-template-columns:1fr 300px;gap:1.25rem;align-items:start}
+.primary .contact-card{background:rgba(255,255,255,0.02);padding:.8rem;border-radius:10px;margin-bottom:1rem}
+.primary h2{margin-top:1rem;color:var(--text)}
+.snapshot, .projects{list-style:none;padding:0;margin:0 0 1rem}
+.snapshot li, .projects li{padding:.25rem 0;color:var(--muted)}
+.skills{color:var(--muted)}
+.secondary .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:.8rem;border-radius:10px;margin-bottom:1rem}
+.secondary .card h3{margin-top:0}
+@media (max-width:900px){ .resume-grid{grid-template-columns:1fr} }
 
 /* Combined Responsive Layout Media Queries */
 @media (max-width:900px){
