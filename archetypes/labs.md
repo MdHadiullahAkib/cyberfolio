@@ -9,6 +9,7 @@ summary = 'Short summary of the target and objective.'
 resources = []
 +++
 
+<!--more-->
 # {{ replace .Name "-" " " | title }}
 
 Write an executive summary, goals, steps, commands, screenshots, and lessons learned.

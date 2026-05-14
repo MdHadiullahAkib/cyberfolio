@@ -8,12 +8,18 @@
 
 <body>
     {{ partial "header.html" . }}
-   <div class="site-grid wrap">
-    {{ partial "sidebar.html" . }}
+    {{ if not .IsHome }}
+      <div class="site-grid wrap">
+    {{ end }}    
+    {{ if not .IsHome }}
+      {{ partial "sidebar.html" . }}
+    {{ end }}
     <main class="content-area">
       {{ block "main" . }}{{ end }}
     </main>
-  </div> 
+    {{ if not .IsHome }}
+      </div>
+    {{ end }}
     {{ partial "footer.html" . }}
 </body>
 

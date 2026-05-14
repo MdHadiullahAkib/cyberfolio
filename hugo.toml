@@ -1,7 +1,12 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-authors = [{name="Md Hadiullah" ,email="mdhadiullahakib@gmail.com"}]
+
+[params]
+  author = "Md Hadiullah Akib" 
+  description = "Cybersecurity notes, lab reports, and portfolio."
 
 [taxonomies]
   tag = "tags"
+
+summaryLength = 200

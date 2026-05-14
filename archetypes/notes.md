@@ -7,4 +7,6 @@ topic = ""
 summary = ""
 +++
 
+<!--more-->
+
 Write your learning notes, definitions, commands, and examples.
