@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Md Hadiullah Akib on My New Hugo Site</title>
-    <link>https://example.org/</link>
+    <link>https://mdhadiullahakib.github.io/cyberfolio/</link>
     <description>Recent content in Md Hadiullah Akib on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mdhadiullahakib.github.io/cyberfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://example.org/about/</link>
+      <link>https://mdhadiullahakib.github.io/cyberfolio/about/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://example.org/about/</guid>
+      <guid>https://mdhadiullahakib.github.io/cyberfolio/about/</guid>
       <description>&lt;p&gt;Write a longer bio, more detailed project descriptions, lab highlights, and downloadable resume:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Full summary paragraph about you and career goals.&lt;/li&gt;&#xA;&lt;li&gt;Detailed project list with links and short bullets.&lt;/li&gt;&#xA;&lt;li&gt;Contact info and links to GitHub, LinkedIn, email.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Tweastinag2</title>
-      <link>https://example.org/notes/tweastinag2/</link>
+      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</link>
       <pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
-      <guid>https://example.org/notes/tweastinag2/</guid>
+      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</guid>
       <description>&lt;p&gt;Write your learning notes, definitions, commands, and examples.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tweasting</title>
-      <link>https://example.org/notes/tweasting/</link>
+      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</link>
       <pubDate>Wed, 13 May 2026 16:33:42 +0600</pubDate>
-      <guid>https://example.org/notes/tweasting/</guid>
+      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</guid>
       <description>&lt;h1 id=&#34;lla&#34;&gt;lla&lt;/h1&gt;&#xA;&lt;h2 id=&#34;laskfk&#34;&gt;laskfk&lt;/h2&gt;&#xA;&lt;p&gt;a;klkjfdasl;fj&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;lasf&lt;/li&gt;&#xA;&lt;li&gt;asldkfkj&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Test</title>
-      <link>https://example.org/notes/test/</link>
+      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</link>
       <pubDate>Wed, 13 May 2026 16:24:55 +0600</pubDate>
-      <guid>https://example.org/notes/test/</guid>
+      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</guid>
       <description>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Blue Team Challenge</title>
-      <link>https://example.org/labs/blue-team-challenge_1/</link>
+      <link>https://mdhadiullahakib.github.io/cyberfolio/labs/blue-team-challenge_1/</link>
       <pubDate>Wed, 13 May 2026 15:00:29 +0600</pubDate>
-      <guid>https://example.org/labs/blue-team-challenge_1/</guid>
+      <guid>https://mdhadiullahakib.github.io/cyberfolio/labs/blue-team-challenge_1/</guid>
       <description>Hardening steps: user auditing, firewall rules, and log monitoring.</description>
     </item>
   </channel>
