@@ -2,7 +2,7 @@
 date = '2026-05-14'
 title = 'Md Hadiullah Akib'
 summary = "Aspiring Security Engineer — pentesting, blue-team, web security"
-resume = "/files/Resume_YourName.pdf"
+resume = "/cyberfolio/files/Resume_MdHadiullahAkib.pdf"
 [contact]
 name = "Md Hadiullah Akib"
 email = "mdhadiullahakib@gmail.com"
