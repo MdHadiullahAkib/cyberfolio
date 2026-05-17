@@ -10,6 +10,10 @@ tags = ["lab","hardening","blue-team"]
 
 # hello
 
+I found This
+
+{{< img src="images/bg.jpg" alt="background">}}
+
 {{< vm name="blue-vm" ip="192.168.56.101" os="Ubuntu 22.04" >}}
 - Hardened SSH
 - Configured UFW

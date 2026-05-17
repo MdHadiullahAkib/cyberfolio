@@ -1,0 +1,26 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "Image" }}
+
+{{/* Fetch from the global assets/ directory */}}
+{{ with resources.Get $src }}
+  {{/* Convert and resize to WebP format seamlessly */}}
+  {{ $tiny := .Resize "400x webp q90" }}
+  {{ $small := .Resize "600x webp q90" }}
+  {{ $medium := .Resize "900x webp q90" }}
+  {{ $large := .Resize "1200x webp q90" }}
+
+  <figure style="margin: 1rem 0;">
+    <img 
+      src="{{ $medium.RelPermalink }}"
+    srcset="{{ $tiny.RelPermalink }} 400w, {{ $small.RelPermalink }} 600w, {{ $medium.RelPermalink }} 900w, {{ $large.RelPermalink }} 1200w"
+      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 80vw, 1200px"
+      alt="{{ $alt }}"
+      loading="lazy"
+      style="max-width: 100%; height: auto; display: block;"
+      width="{{ .Width }}"
+      height="{{ .Height }}">
+  </figure>
+{{ else }}
+  <p style="color: red;">Image not found in assets/: {{ $src }}</p>
+{{ end }}
+

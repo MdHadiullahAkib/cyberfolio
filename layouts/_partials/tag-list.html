@@ -1,7 +1,7 @@
 {{ with .Params.tags }}
   <div class="tag-list">
     {{ range $i, $tag := . }}
-      {{ $tagURL := (printf "/tags/%s/" (urlize $tag)) | relURL }}
+      {{ $tagURL := (printf "/cyberfolio/tags/%s/" (urlize $tag)) | relURL }}
       <a class="tag" href="{{ $tagURL }}">{{ $tag }}</a>{{ if lt (add $i 1) (len .) }} {{ end }}
     {{ end }}
   </div>
