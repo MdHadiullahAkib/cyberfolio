@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Learning Hugo — My New Hugo Site</title>
+<meta
+  name="description"
+  content="Hugo static site generator is a must to maintain blog. Using Hugo one can manage a blog, note or portfolio website easily."
+/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+
+
+<meta name="theme-color" content="#061021">
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/cyberfolio/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+  <div class="wrap">
+    <h1><a href='/cyberfolio/'>My New Hugo Site</a></h1>
+    <nav>
+      <a href='/cyberfolio/notes/'>Notes</a>
+      <a href='/cyberfolio/labs/'>Labs</a>
+      <a href='/cyberfolio/about/'>About</a>
+      <a href='/cyberfolio/projects/'>Projects</a>
+    </nav>
+  </div>
+</header>
+
+    
+      <div class="layout-container">
+        
+    
+      
+<aside class="sidebar">
+  
+  <div class="section-nav">
+    <h3>In Notes</h3>
+    <div class="scroll-wrapper">
+      <ul>
+        
+          <li class="">
+            <a href="/cyberfolio/notes/roadmap/">Roadmap</a>
+          </li>
+        
+          <li class="active">
+            <a href="/cyberfolio/notes/learning-hugo/">Learning Hugo</a>
+          </li>
+        
+          <li class="">
+            <a href="/cyberfolio/notes/tweastingimage/">Tweastingimage</a>
+          </li>
+        
+          <li class="">
+            <a href="/cyberfolio/notes/tweastinag2/">Tweastinag2</a>
+          </li>
+        
+          <li class="">
+            <a href="/cyberfolio/notes/tweasting/">Tweasting</a>
+          </li>
+        
+          <li class="">
+            <a href="/cyberfolio/notes/test/">Test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  
+  <div class="page-nav sticky-toc">
+    <h3>On This Page</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-it-all-works">How It all works</a></li>
+    <li><a href="#installing-hugo">Installing Hugo</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#my-pipeline">My pipeline</a></li>
+  </ul>
+</nav>
+  </div>
+  
+</aside>
+
+
+    
+    <main class="content-area">
+      
+<article class="post">
+  <header>
+    <h1>Learning Hugo</h1>
+    <div class="meta">
+      2026-05-17 • 
+  <div class="tag-list">
+    
+      
+      <a class="tag" href="/cyberfolio/tags/note/">note</a> 
+    
+      
+      <a class="tag" href="/cyberfolio/tags/website/">website</a> 
+    
+  </div>
+
+
+    </div>
+  </header>
+  <section class="content"><p>Hugo static site generator is a must to maintain blog. Using Hugo one can manage a blog, note or portfolio website easily.</p>
+<h1 id="about-hugo">About Hugo</h1>
+<p>Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. It is open-source and free to use. Hugo has a large and active community. If you have questions or need help, you can ask in the <a href="https://discourse.gohugo.io/">Hugo forums</a>.<br>
+Check out their official <a href="https://discourse.gohugo.io/">website</a> if you are interested.</p>
+<h2 id="how-it-all-works">How It all works</h2>
+<p>Basically markdown is a lightweight markup language for creating formatted text using a plain-text editor. John Gruber created Markdown in 2004 as an easy-to-read markup language. It is widely used for note taking, many of you must have heard of the popular note taking app <a href="https://obsidian.md/">obsidian</a>.</p>
+<p>As markdown is a markup language and uses symbles to format its documents it is converted/rendered in html. After that you can add <code>css</code>, <code>javascript</code> to make it look good.</p>
+<p>That is exactly what hugo does. It creates files, folders structure and converts, renders, builds and formates the markdown file and puts all together to make a website.</p>
+<h2 id="installing-hugo">Installing Hugo</h2>
+<p>Installing hugo is going to be different depending on which operating system you are using.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p><a href="https://git-scm.com/">git</a>,  <a href="https://gohugo.io/installation/">hugo</a>
+optional <a href="https://go.dev/">go</a> language</p>
+<p>If you are a windows user then you have to download the prebuilt binary, extract it and move it to <code>C:</code> directory and add the directory to path variable. Its a lots of work.<br>
+But instead what you can do is use a package manager like <a href="https://chocolatey.org/">Chocolatey</a>, <a href="https://scoop.sh/">Scoop</a>, <a href="https://learn.microsoft.com/en-us/windows/package-manager/">Winget</a> and run a single command.
+<code>choco install hugo-extended</code><br>
+or<br>
+<code>scoop install hugo-extended</code><br>
+or<br>
+<code>winget install hugo-extended</code></p>
+<p>If everything went well then check that you have it installed by running <code>hugo version</code> command.</p>
+<p>Now to start a new project and add a theme run these commands</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new project quickstart
+</span></span><span style="display:flex;"><span>cd quickstart
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/gohugo-ananke/ananke themes/ananke
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;theme = &#39;ananke&#39;&#34;</span> &gt;&gt; hugo.toml
+</span></span><span style="display:flex;"><span>hugo server
+</span></span></code></pre></div><p>the first line creates a new project/folder named quickstart<br>
+the <code>cd foldername</code> changes the directory<br>
+to add a theme you have to start a git repo using <code>git init</code><br>
+check out different themes available to install in <a href="https://themes.gohugo.io/">hugo themes</a> and run <code>git submodule add 'theme link'</code><br>
+after that run <code>hugo server</code> to build and view the website on your <a href="localhost:1313">localhost:1313</a> link</p>
+<h2 id="my-pipeline">My pipeline</h2>
+<p>I have uploaded all my cyberfolio codes in <a href="https://github.com/MdHadiullahAkib/cyberfolir">this github repo</a></p>
+<p>For deploying my website I have made this bash script</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/etc/profiles/per-user/akib/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Changing Directory&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd ~/HugoSites/cyberfolio
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Clearing public directory&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rm -r public/*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;building site&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#39;Enter commit name: &#39;</span> commit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;</span>$commit<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;pushing to remote repo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;spliting public directory&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git subtree split --prefix public -b site-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git push origin site-deploy:deploy --force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git branch -D site-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Deployed succesfully&#34;</span>
+</span></span></code></pre></div></section>
+
+  
+</article>
+
+<nav class="post-nav">
+  
+  
+  <div class="nav-row">
+    
+    <a class="prev" href="/cyberfolio/notes/tweastingimage/" title="Tweastingimage">
+      ← <span class="label">Previous</span>
+      <strong class="title">Tweastingimage</strong>
+    </a>
+    
+    
+  </div>
+</nav>
+
+
+
+    </main>
+    
+      </div>
+    
+    <footer class="site-footer">
+  <div class="wrap">© 2026 Md Hadiullah Akib</div>
+</footer>
+
+</body>
+
+</html>

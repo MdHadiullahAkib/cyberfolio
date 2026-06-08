@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Website on My New Hugo Site</title>
+		<link>https://mdhadiullahakib.github.io/cyberfolio/tags/website/</link>
+		<description>Recent content in Website on My New Hugo Site</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 May 2026 13:01:10 +0600</lastBuildDate>
+		
+			<atom:link href="https://mdhadiullahakib.github.io/cyberfolio/tags/website/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Learning Hugo</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/learning-hugo/</link>
+				<pubDate>Sun, 17 May 2026 13:01:10 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/learning-hugo/</guid>
+				<description>&lt;p&gt;Hugo static site generator is a must to maintain blog. Using Hugo one can manage a blog, note or portfolio website easily.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
