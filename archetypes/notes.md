@@ -1,9 +1,11 @@
 +++
 title = '{{ replace .Name "-" " " | title }}'
 date = {{ .Date }}
-tags = ["note"]
+tags = ["note", "roadmap"]
 type = "note"
-topic = ""
+roadmap_section = ""
+roadmap_topic = ""
+tools = []
 summary = ""
 +++
 

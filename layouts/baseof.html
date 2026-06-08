@@ -9,7 +9,7 @@
 <body>
     {{ partial "header.html" . }}
     {{ if not .IsHome }}
-      <div class="site-grid wrap">
+      <div class="layout-container">
     {{ end }}    
     {{ if not .IsHome }}
       {{ partial "sidebar.html" . }}

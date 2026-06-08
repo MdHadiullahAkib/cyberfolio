@@ -2,7 +2,7 @@
 title = 'Tweastingimage'
 date = 2026-05-16T16:07:50+06:00
 tags = ["note"]
-type = "note"
+type = "notes"
 topic = "Testing Image integration"
 summary = "summary summe"
 +++

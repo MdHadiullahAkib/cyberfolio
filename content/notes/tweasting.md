@@ -2,6 +2,7 @@
 date = '2026-05-13T16:33:42+06:00'
 title = 'Tweasting'
 tags = ["note", "cs", "ls"]
+type = "notes"
 +++
 
 

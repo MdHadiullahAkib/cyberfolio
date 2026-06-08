@@ -1,12 +1,37 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/</loc>
+    <lastmod>2026-06-08T12:06:00+06:00</lastmod>
+  </url><url>
     <loc>https://mdhadiullahakib.github.io/cyberfolio/tags/note/</loc>
-    <lastmod>2026-05-16T16:07:50+06:00</lastmod>
+    <lastmod>2026-06-08T12:06:00+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/tags/roadmap/</loc>
+    <lastmod>2026-06-08T12:06:00+06:00</lastmod>
   </url><url>
     <loc>https://mdhadiullahakib.github.io/cyberfolio/tags/</loc>
-    <lastmod>2026-05-16T16:07:50+06:00</lastmod>
+    <lastmod>2026-06-08T12:06:00+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/computer-hardware-components/</loc>
+    <lastmod>2026-06-07T20:31:47+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/cisco-introduction-to-cybersecurity/</loc>
+    <lastmod>2026-05-18T15:04:15+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/tags/cyber/</loc>
+    <lastmod>2026-05-18T15:04:15+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/learning-progress/</loc>
+    <lastmod>2026-05-18T14:59:39+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/notes/learning-hugo/</loc>
+    <lastmod>2026-05-17T13:01:10+06:00</lastmod>
+  </url><url>
+    <loc>https://mdhadiullahakib.github.io/cyberfolio/tags/website/</loc>
+    <lastmod>2026-05-17T13:01:10+06:00</lastmod>
   </url><url>
     <loc>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastingimage/</loc>
     <lastmod>2026-05-16T16:07:50+06:00</lastmod>

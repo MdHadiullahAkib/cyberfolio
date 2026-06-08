@@ -1,40 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Note on My New Hugo Site</title>
-    <link>https://mdhadiullahakib.github.io/cyberfolio/tags/note/</link>
-    <description>Recent content in Note on My New Hugo Site</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 16 May 2026 16:07:50 +0600</lastBuildDate>
-    <atom:link href="https://mdhadiullahakib.github.io/cyberfolio/tags/note/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tweastingimage</title>
-      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastingimage/</link>
-      <pubDate>Sat, 16 May 2026 16:07:50 +0600</pubDate>
-      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastingimage/</guid>
-      <description>&lt;p&gt;Write your learning notes, definitions, commands, and examples.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tweastinag2</title>
-      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</link>
-      <pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
-      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</guid>
-      <description>&lt;p&gt;Write your learning notes, definitions, commands, and examples.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tweasting</title>
-      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</link>
-      <pubDate>Wed, 13 May 2026 16:33:42 +0600</pubDate>
-      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</guid>
-      <description>&lt;h1 id=&#34;lla&#34;&gt;lla&lt;/h1&gt;&#xA;&lt;h2 id=&#34;laskfk&#34;&gt;laskfk&lt;/h2&gt;&#xA;&lt;p&gt;a;klkjfdasl;fj&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;lasf&lt;/li&gt;&#xA;&lt;li&gt;asldkfkj&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>Test</title>
-      <link>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</link>
-      <pubDate>Wed, 13 May 2026 16:24:55 +0600</pubDate>
-      <guid>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</guid>
-      <description>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Note on My New Hugo Site</title>
+		<link>https://mdhadiullahakib.github.io/cyberfolio/tags/note/</link>
+		<description>Recent content in Note on My New Hugo Site</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 08 Jun 2026 12:06:00 +0600</lastBuildDate>
+		
+			<atom:link href="https://mdhadiullahakib.github.io/cyberfolio/tags/note/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Roadmap</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/</link>
+				<pubDate>Mon, 08 Jun 2026 12:06:00 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Computer Hardware Components</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/computer-hardware-components/</link>
+				<pubDate>Sun, 07 Jun 2026 20:31:47 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/computer-hardware-components/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cisco Introduction to Cybersecurity</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/cisco-introduction-to-cybersecurity/</link>
+				<pubDate>Mon, 18 May 2026 15:04:15 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/roadmap/fundamental-it-skills/cisco-introduction-to-cybersecurity/</guid>
+				<description>&lt;p&gt;This course consists of five modules and a final exam and should take you approximately six hours to complete.&lt;/p&gt;&#xA;&lt;p&gt;On completing this course&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Explain the basics of being safe online, including what cybersecurity is and its potential impact.&lt;/li&gt;&#xA;&lt;li&gt;Explain the most common cyber threats, attacks and vulnerabilities.&lt;/li&gt;&#xA;&lt;li&gt;Explain how organizations can protect their operations against these attacks.&lt;/li&gt;&#xA;&lt;li&gt;Access various information and resources to explore the different career options in cybersecurity.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
+			<item>
+				<title>Learning Hugo</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/learning-hugo/</link>
+				<pubDate>Sun, 17 May 2026 13:01:10 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/learning-hugo/</guid>
+				<description>&lt;p&gt;Hugo static site generator is a must to maintain blog. Using Hugo one can manage a blog, note or portfolio website easily.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tweastingimage</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastingimage/</link>
+				<pubDate>Sat, 16 May 2026 16:07:50 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastingimage/</guid>
+				<description>&lt;p&gt;Write your learning notes, definitions, commands, and examples.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tweastinag2</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</link>
+				<pubDate>Wed, 13 May 2026 16:34:52 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweastinag2/</guid>
+				<description>&lt;p&gt;Write your learning notes, definitions, commands, and examples.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tweasting</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</link>
+				<pubDate>Wed, 13 May 2026 16:33:42 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/tweasting/</guid>
+				<description>&lt;h1 id=&#34;lla&#34;&gt;lla&lt;/h1&gt;&#xA;&lt;h2 id=&#34;laskfk&#34;&gt;laskfk&lt;/h2&gt;&#xA;&lt;p&gt;a;klkjfdasl;fj&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;lasf&lt;/li&gt;&#xA;&lt;li&gt;asldkfkj&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Test</title>
+				<link>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</link>
+				<pubDate>Wed, 13 May 2026 16:24:55 +0600</pubDate>
+				<guid>https://mdhadiullahakib.github.io/cyberfolio/notes/test/</guid>
+				<description>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;</description>
+			</item>
+	</channel>
 </rss>
