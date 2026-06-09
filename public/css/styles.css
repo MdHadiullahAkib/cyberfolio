@@ -1,6 +1,6 @@
 :root{
   --bg:#2e6754; --card:#081026; --muted:#9fb0c8; --text:#e6eef8;
-  --accent:#06b6d4; --accent-2:#7c3aed; --glass:rgba(255,255,255,0.03);
+  --accent:#06b6d4; --accent-2:#7c3aed; --glass:rgba(255,255,255,0.03); --border-color: #334155;
   --radius:10px; --maxw:90rem; --pad:1.1rem; --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono";
 }
 
@@ -293,20 +293,6 @@ pre::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
 /* Ensure nested pre tags within responsive tables stay contained */
 table pre { max-width: 100%; overflow-x: auto; }
 
-
-/* Resume home layout */
-.resume-home .name{font-size:1.6rem;margin:0;color:var(--text)}
-.resume-home .tagline{color:var(--muted);margin:.4rem 0 1rem}
-.resume-grid{display:grid;grid-template-columns:1fr 300px;gap:1.25rem;align-items:start}
-.primary .contact-card{background:rgba(255,255,255,0.02);padding:.8rem;border-radius:10px;margin-bottom:1rem}
-.primary h2{margin-top:1rem;color:var(--text)}
-.snapshot, .projects{list-style:none;padding:0;margin:0 0 1rem}
-.snapshot li, .projects li{padding:.25rem 0;color:var(--muted)}
-.skills{color:var(--muted)}
-.secondary .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:.8rem;border-radius:10px;margin-bottom:1rem}
-.secondary .card h3{margin-top:0}
-@media (max-width:900px){ .resume-grid{grid-template-columns:1fr} }
-
 /* Combined Responsive Layout Media Queries */
 @media (max-width:900px){
   .site-grid{grid-template-columns:minmax(0,1fr);gap:.8rem}
@@ -318,4 +304,143 @@ table pre { max-width: 100%; overflow-x: auto; }
   .site-header .wrap{flex-direction:column; align-items:flex-start}
   nav{width:100%; justify-content:space-between}
   .post-list{grid-template-columns:1fr}
+}
+
+
+
+/* Resume home layout */
+
+
+.cv-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 10px 30px;
+}
+
+.cv-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cv-header { grid-template-columns: 1fr; }
+}
+
+.profile-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profile-pic-container {
+  flex-shrink: 0;
+}
+
+.profile-pic-passport {
+  width: 105px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid var(--border-color);
+}
+
+.tagline {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-top: -0.5rem;
+}
+
+.contact-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.contact-meta a { color: var(--muted); text-decoration: none; }
+.social-links a { color: var(--accent); margin-right: 1rem; text-decoration: none; font-weight: 500; }
+
+.cv-sidebar {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.sidebar-block h3 { margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+.sidebar-block ul { list-style: none; padding: 0; }
+.sidebar-block li { margin-bottom: 0.5rem; }
+.sidebar-block a { color: var(--text); text-decoration: none; }
+.sidebar-block a:hover { color: var(--accent); }
+
+.btn-download {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--card) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.divider { border: 0; height: 1px; background: var(--border-color); margin: 2.5rem 0; }
+
+.cv-section h2 { color: var(--accent); font-size: 1.5rem; margin-top: 0; margin-bottom: 1.5rem; }
+.markdown-bio { color: var(--muted); line-height: 1.6; font-size: 1.05rem; }
+
+/* Standard Single-Line Flex Items */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* Multi-Line Block Items (Experience) */
+.cv-block-item {
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.item-details {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.text-muted, .item-date { color: var(--muted); }
+.details-link { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+
+/* Skills Category Rules */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.skills-category { background: var(--card); padding: 1.2rem; border-radius: 6px; border: 1px solid var(--border-color); }
+.skills-category h3 { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.1rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag-item { background: #334155; color: var(--accent); padding: 0.3rem 0.7rem; font-size: 0.85rem; border-radius: 4px; }
+
+@media (max-width: 600px) {
+  .profile-layout { flex-direction: column-reverse; gap: 1.5rem; }
+  .cv-item, .item-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }

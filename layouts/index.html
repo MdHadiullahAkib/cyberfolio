@@ -1,50 +1,46 @@
 {{ define "main" }}
-<article class="post resume-home">
-  <header>
-    <h1 class="name">{{ .Title }}</h1>
-    <p class="tagline">{{ .Params.summary }}</p>
-  </header>
+<main class="cv-container">
+  
+  <!-- PROFILE HEADER SECTION -->
+  <header class="cv-header">
+    <div class="header-main">
+      <div class="profile-layout">
+        <div class="profile-text">
+          <h1>{{ .Params.name | default "Your Name" }}</h1>
+          <p class="tagline">{{ .Params.tagline }}</p>
+          
+          <div class="contact-meta">
+            <span>📧 <a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></span>
+          </div>
+          
+          <div class="social-links">
+            {{ range .Params.socials }}
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            {{ end }}
+          </div>
+        </div>
 
-  <section class="resume-grid">
-    <div class="primary">
-      {{ with .Params.contact }}
-      <div class="contact-card">
-        <p><strong>{{ .name }}</strong></p>
-        <p>{{ .location }} • <a href="mailto:{{ .email }}">{{ .email }}</a></p>
-        <p><a href="{{ .github }}">GitHub</a> • <a href="{{ .linkedin }}">LinkedIn</a></p>
+        <!-- Passport photo on the right (Automated Web Processing) -->
+        {{ if .Params.image }}
+          <div class="profile-pic-container">
+            {{ $assetImg := resources.Get .Params.image }}
+            {{ if $assetImg }}
+              <!-- Force 3:4 aspect ratio crop, convert to webp, compress to 85% quality -->
+              {{ $passportPhoto := $assetImg.Fill "300x400 webp q85" }}
+              <img src="{{ $passportPhoto.RelPermalink }}" alt="{{ .Params.name }}" class="profile-pic-passport">
+            {{ else }}
+
+      <span style="color: var(--accent); font-size: 0.8rem;">Image not found in assets/</span>
+    {{ end }}
+  </div>
+{{ end }}
+        
       </div>
-      {{ end }}
-
-      {{ with .Params.snapshot}}
-      <h2>Snapshot</h2>
-      <ul class="snapshot">
-        {{ range . }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-      {{ end }}
-
-      <h2>Experience & Projects</h2>
-      <ul class="projects">
-        {{ range .Params.projects }}
-          <li>
-            <strong>{{ .title }}</strong> — {{ .desc }}
-            {{ with .link }} • <a href="{{ . }}">Details</a>{{ end }}
-          </li>
-        {{ end }}
-      </ul>
-
-      {{ with .Params.skills }}
-        <h2>Skills</h2>
-        <p class="skills">{{ delimit . ", " }}</p>
-      {{ end }}
-      
-      <h2>Education</h2>
-      <p>{{ .Params.education }}</p>
     </div>
-
-    <aside class="secondary">
-      <div class="card">
+    
+    <!-- Sidebar / Quick Links -->
+    <aside class="cv-sidebar">
+      <div class="sidebar-block">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="{{ "notes/" | relURL }}">Notes</a></li>
@@ -54,13 +50,142 @@
           <li><a href="{{ "about/" | relURL }}">About</a></li>
         </ul>
       </div>
-
-      <div class="card">
+      
+      {{ if .Params.resume }}
+      <div class="sidebar-block download-box">
         <h3>Download</h3>
-        <p><a href="{{ .Params.resume }}">Resume (PDF)</a></p>
+        <a href="{{ .Params.resume }}" class="btn-download" download>📄 Resume (PDF)</a>
       </div>
+      {{ end }}
     </aside>
+  </header>
+
+  <!-- 1. PROFESSIONAL SUMMARY SECTION -->
+  {{ if .Content }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Professional Summary</h2>
+    <div class="markdown-bio">
+      {{ .Content }}
+    </div>
   </section>
-</article>
+  {{ end }}
+
+  <!-- 2. KEY SKILLS SECTION -->
+  {{ if .Params.skills }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Key Skills</h2>
+    <div class="skills-grid">
+      {{ range .Params.skills }}
+        <div class="skills-category">
+          <h3>{{ .category }}</h3>
+          <div class="tags">
+            {{ range .items }}
+              <span class="tag-item">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 3. EDUCATION SECTION -->
+  {{ if .Params.education }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Education</h2>
+    <div class="list-container">
+      {{ range .Params.education }}
+        <div class="cv-item">
+          <div>
+            <strong>{{ .degree }}</strong> — <span class="text-muted">{{ .institution }}</span>
+          </div>
+          <span class="item-date">{{ .year }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 4. WORK EXPERIENCE SECTION -->
+  {{ if .Params.experience }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Work Experience</h2>
+    <div class="list-container">
+      {{ range .Params.experience }}
+        <div class="cv-block-item">
+          <div class="item-header">
+            <strong>{{ .role }}</strong> <span class="text-muted">at {{ .company }}</span>
+            <span class="item-date">{{ .duration }}</span>
+          </div>
+          {{ if .details }}
+            <p class="item-details">{{ .details }}</p>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 5. PROJECTS AND LABS SECTION -->
+  {{ if .Params.projects }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Projects &amp; Labs</h2>
+    <div class="list-container">
+      {{ range .Params.projects }}
+        <div class="cv-item">
+          <div>
+            <strong>{{ .title }}</strong> — <span class="text-muted">{{ .description }}</span>
+          </div>
+          {{ if .details_url }}
+            <a href="{{ .details_url }}" class="details-link">Details →</a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 6. CERTIFICATIONS SECTION -->
+  {{ if .Params.certifications }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Certifications</h2>
+    <div class="list-container">
+      {{ range .Params.certifications }}
+        <div class="cv-item">
+          <div>
+            <strong>{{ .name }}</strong> — <span class="text-muted">{{ .issuer }}</span>
+          </div>
+          <span class="item-date">{{ .year }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 7. EXTRA CURRICULAR ACTIVITIES SECTION -->
+  {{ if .Params.extracurricular }}
+  <hr class="divider">
+  <section class="cv-section">
+    <h2>Extra-Curricular Activities</h2>
+    <div class="list-container">
+      {{ range .Params.extracurricular }}
+        <div class="cv-item">
+          <div>
+            <strong>{{ .role }}</strong> — <span class="text-muted">{{ .organization }}</span>
+          </div>
+          <span class="item-date">{{ .duration }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</main>
 {{ end }}
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Blue Team on My New Hugo Site</title>
-		<link>https://mdhadiullahakib.github.io/cyberfolio/tags/blue-team/</link>
-		<description>Recent content in Blue Team on My New Hugo Site</description>
+		<title>SIEM on My New Hugo Site</title>
+		<link>https://mdhadiullahakib.github.io/cyberfolio/tags/siem/</link>
+		<description>Recent content in SIEM on My New Hugo Site</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
@@ -12,20 +12,13 @@
 		
 			<lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://mdhadiullahakib.github.io/cyberfolio/tags/blue-team/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://mdhadiullahakib.github.io/cyberfolio/tags/siem/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Blue Team VM Hardening Lab</title>
 				<link>https://mdhadiullahakib.github.io/cyberfolio/projects/blue-team-hardening/</link>
 				<pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>https://mdhadiullahakib.github.io/cyberfolio/projects/blue-team-hardening/</guid>
 				<description>&lt;h2 id=&#34;lab-overview&#34;&gt;Lab Overview&lt;/h2&gt;&#xA;&lt;p&gt;This project focuses on auditing and securing a vanilla Ubuntu Server installation against common attack vectors.&lt;/p&gt;&#xA;&lt;h3 id=&#34;core-objectives&#34;&gt;Core Objectives&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Configure system firewalls using &lt;strong&gt;UFW&lt;/strong&gt; to block all unauthorized traffic.&lt;/li&gt;&#xA;&lt;li&gt;Enforce strong password policies and disable root SSH login.&lt;/li&gt;&#xA;&lt;li&gt;Implement central log collection utilizing an ELK stack pipeline.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;steps-taken&#34;&gt;Steps Taken&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;SSH Hardening&lt;/strong&gt;: Edited &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; to change the default port and restrict authentication strictly to SSH keys.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Auditd Setup&lt;/strong&gt;: Deployed Linux Audit Framework rules to track unauthorized file changes in critical system directories.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example rule used to monitor password changes&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-w /etc/passwd -p wa -k passwd_changes&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-			</item>
-			<item>
-				<title>Blue Team Challenge</title>
-				<link>https://mdhadiullahakib.github.io/cyberfolio/labs/blue-team-challenge_1/</link>
-				<pubDate>Wed, 13 May 2026 15:00:29 +0600</pubDate>
-				<guid>https://mdhadiullahakib.github.io/cyberfolio/labs/blue-team-challenge_1/</guid>
-				<description>Hardening steps: user auditing, firewall rules, and log monitoring.</description>
 			</item>
 	</channel>
 </rss>
