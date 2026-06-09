@@ -4,11 +4,25 @@
 <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Projects — My New Hugo Site</title>
+<title>Blue Team VM Hardening Lab — My New Hugo Site</title>
 <meta
   name="description"
-  content="a;lkfji
-asldkfj"
+  content="Lab Overview
+This project focuses on auditing and securing a vanilla Ubuntu Server installation against common attack vectors.
+Core Objectives
+
+Configure system firewalls using UFW to block all unauthorized traffic.
+Enforce strong password policies and disable root SSH login.
+Implement central log collection utilizing an ELK stack pipeline.
+
+Steps Taken
+
+SSH Hardening: Edited /etc/ssh/sshd_config to change the default port and restrict authentication strictly to SSH keys.
+Auditd Setup: Deployed Linux Audit Framework rules to track unauthorized file changes in critical system directories.
+
+# Example rule used to monitor password changes
+-w /etc/passwd -p wa -k passwd_changes
+"
 />
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +64,7 @@ asldkfj"
     <div class="scroll-wrapper">
       <ul>
         
-          <li class="">
+          <li class="active">
             <a href="/cyberfolio/projects/blue-team-hardening/">Blue Team VM Hardening Lab</a>
           </li>
         
@@ -62,7 +76,16 @@ asldkfj"
   
   <div class="page-nav sticky-toc">
     <h3>On This Page</h3>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lab-overview">Lab Overview</a>
+      <ul>
+        <li><a href="#core-objectives">Core Objectives</a></li>
+        <li><a href="#steps-taken">Steps Taken</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
   
 </aside>
@@ -71,15 +94,28 @@ asldkfj"
     
     <main class="content-area">
       
-<h2>Projects</h2>
-<ul class="post-list">
-  
-  <li>
-    <a href="/cyberfolio/projects/blue-team-hardening/">Blue Team VM Hardening Lab</a>
+<article class="post">
+  <header>
+    <h1>Blue Team VM Hardening Lab</h1>
     <div class="meta">
       2026-06-09 • 
+  <div class="tag-list">
+    
+      
+      <a class="tag" href="/cyberfolio/tags/blue-team/">Blue Team</a> 
+    
+      
+      <a class="tag" href="/cyberfolio/tags/linux-security/">Linux Security</a> 
+    
+      
+      <a class="tag" href="/cyberfolio/tags/siem/">SIEM</a> 
+    
+  </div>
+
+
     </div>
-    <p><h2 id="lab-overview">Lab Overview</h2>
+  </header>
+  <section class="content"><h2 id="lab-overview">Lab Overview</h2>
 <p>This project focuses on auditing and securing a vanilla Ubuntu Server installation against common attack vectors.</p>
 <h3 id="core-objectives">Core Objectives</h3>
 <ul>
@@ -94,10 +130,21 @@ asldkfj"
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example rule used to monitor password changes</span>
 </span></span><span style="display:flex;"><span>-w /etc/passwd -p wa -k passwd_changes
-</span></span></code></pre></div></p>
-  </li>
+</span></span></code></pre></div></section>
+
   
-</ul>
+</article>
+
+<nav class="post-nav">
+  
+  
+  <div class="nav-row">
+    
+    
+  </div>
+</nav>
+
+
 
     </main>
     

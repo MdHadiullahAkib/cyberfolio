@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Blue-Team — My New Hugo Site</title>
+<title>Blue Team — My New Hugo Site</title>
 <meta
   name="description"
   content="Cybersecurity notes, lab reports, and portfolio."
@@ -45,9 +45,13 @@
 <aside class="sidebar">
   
   <div class="section-nav">
-    <h3>In Blue-Team</h3>
+    <h3>In Blue Team</h3>
     <div class="scroll-wrapper">
       <ul>
+        
+          <li class="">
+            <a href="/cyberfolio/projects/blue-team-hardening/">Blue Team VM Hardening Lab</a>
+          </li>
         
           <li class="">
             <a href="/cyberfolio/labs/blue-team-challenge_1/">Blue Team Challenge</a>
@@ -70,8 +74,31 @@
     
     <main class="content-area">
       
-<h2>Blue-Team</h2>
+<h2>Blue Team</h2>
 <ul class="post-list">
+  
+  <li>
+    <a href="/cyberfolio/projects/blue-team-hardening/">Blue Team VM Hardening Lab</a>
+    <div class="meta">
+      2026-06-09 • 
+    </div>
+    <p><h2 id="lab-overview">Lab Overview</h2>
+<p>This project focuses on auditing and securing a vanilla Ubuntu Server installation against common attack vectors.</p>
+<h3 id="core-objectives">Core Objectives</h3>
+<ul>
+<li>Configure system firewalls using <strong>UFW</strong> to block all unauthorized traffic.</li>
+<li>Enforce strong password policies and disable root SSH login.</li>
+<li>Implement central log collection utilizing an ELK stack pipeline.</li>
+</ul>
+<h3 id="steps-taken">Steps Taken</h3>
+<ol>
+<li><strong>SSH Hardening</strong>: Edited <code>/etc/ssh/sshd_config</code> to change the default port and restrict authentication strictly to SSH keys.</li>
+<li><strong>Auditd Setup</strong>: Deployed Linux Audit Framework rules to track unauthorized file changes in critical system directories.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example rule used to monitor password changes</span>
+</span></span><span style="display:flex;"><span>-w /etc/passwd -p wa -k passwd_changes
+</span></span></code></pre></div></p>
+  </li>
   
   <li>
     <a href="/cyberfolio/labs/blue-team-challenge_1/">Blue Team Challenge</a>
