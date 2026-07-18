@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Learning Hugo — My New Hugo Site</title>
+<title>Learning Hugo — My portfolio and documentation site</title>
 <meta
   name="description"
   content="Hugo static site generator is a must to maintain blog. Using Hugo one can manage a blog, note or portfolio website easily."
@@ -27,7 +27,7 @@
 <body>
     <header class="site-header">
   <div class="wrap">
-    <h1><a href='/cyberfolio/'>My New Hugo Site</a></h1>
+    <h1><a href='/cyberfolio/'>My portfolio and documentation site</a></h1>
     <nav>
       <a href='/cyberfolio/notes/'>Notes</a>
       <a href='/cyberfolio/labs/'>Labs</a>
@@ -90,6 +90,13 @@
       </ul>
     </li>
     <li><a href="#my-pipeline">My pipeline</a></li>
+    <li><a href="#understanding-hugo">Understanding Hugo</a>
+      <ul>
+        <li><a href="#template">Template</a></li>
+        <li><a href="#lookup-order">Lookup Order</a></li>
+      </ul>
+    </li>
+    <li><a href="#now-challenge-myself-to-understand-everything-that-i-have-used-to-make-this-website">Now Challenge myself to understand everything that I have used to make this website.</a></li>
   </ul>
 </nav>
   </div>
@@ -188,7 +195,122 @@ after that run <code>hugo server</code> to build and view the website on your <a
 </span></span><span style="display:flex;"><span>git branch -D site-deploy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Deployed succesfully&#34;</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><h2 id="understanding-hugo">Understanding Hugo</h2>
+<h3 id="template">Template</h3>
+<p><code>{{ $v1 := 6}}</code> variable declare</p>
+<p>(.) represents current context.</p>
+<p>Within a range or with block you can access the context passed into the template by prepending a dollar sign ($) to the dot:</p>
+<pre tabindex="0"><code>&lt;h2&gt;{{ .Title }}&lt;/h2&gt;
+{{ with &#34;foo&#34; }}
+  &lt;p&gt;{{ $.Title }} - {{ . }}&lt;/p&gt;
+{{ end }}
+</code></pre><p>Double quotes for interpreted string literals <code>{{ print &quot;Hello world\u0021&quot; }} → Hello world!</code></p>
+<p>backticks for row string literals <code>{{ print `Hello world\u0021` }} → Hello world\u0021 </code></p>
+<h4 id="pipes">pipes</h4>
+<p>These pairs are equivilant</p>
+<pre tabindex="0"><code>{{ strings.ToLower &#34;Hugo&#34; }} → hugo
+{{ &#34;Hugo&#34; | strings.ToLower }} → hugo
+
+{{ strings.TrimSuffix &#34;o&#34; (strings.ToLower &#34;Hugo&#34;) }} → hug
+{{ &#34;Hugo&#34; | strings.ToLower | strings.TrimSuffix &#34;o&#34; }} → hug
+
+{{ mul 6 (add 2 5) }} → 42
+{{ 5 | add 2 | mul 6 }} → 42
+</code></pre><p><strong>Remember that the piped value becomes the final argument to the function or method to which you are piping.</strong></p>
+<p>With variables that represent a map or object, <strong>chain identifiers (connect with .)</strong> to return the desired value or to access the desired method.</p>
+<pre tabindex="0"><code>{{ $map := dict &#34;a&#34; &#34;foo&#34; &#34;b&#34; &#34;bar&#34; &#34;c&#34; &#34;baz&#34; }}
+{{ $map.c }} → baz
+
+{{ $homePage := .Site.Home }}
+{{ $homePage.Title }} → My Homepage
+</code></pre><h4 id="functions">functions</h4>
+<p>Takes one/more arguments and returns a value. Frequently used functions have aliases. <code>{{ $ total := add 1 2 3 4}}</code></p>
+<h4 id="methods">methods</h4>
+<p>Associated with and object, takes zero or more arguments and either returns a value or performs an action.</p>
+<p>Page object has Date, Params, Title, etc methods.</p>
+<pre tabindex="0"><code>{{ .Site.Title }} → My Site Title
+{{ .Page.Title }} → My Page Title
+</code></pre><p>if the context is Page object then</p>
+<pre tabindex="0"><code>{{ .Title }} → My Page Title
+</code></pre><p>if the methode take argument then</p>
+<pre tabindex="0"><code>{{ $page := .Page.GetPage &#34;/books/les-miserables&#34; }}
+{{ $page.Title }} → Les Misérables
+</code></pre><h4 id="comments">comments</h4>
+<pre tabindex="0"><code>{{/* This is an inline comment. */}}
+
+{{/*
+This is a block comment.
+*/}}
+
+{{- /*
+This is a block comment with
+adjacent whitespace removed.
+*/ -}}
+</code></pre><h4 id="include-partials">include partials</h4>
+<pre tabindex="0"><code>{{ partial &#34;google_analytics.html&#34; . }}
+{{ partial &#34;opengraph&#34; . }}
+{{ partial &#34;breadcrumbs.html&#34; . }}
+{{ partialCached &#34;css.html&#34; . }}
+</code></pre><h4 id="params-method-on-site-object">Params method on Site object.</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hugo.toml" data-lang="hugo.toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://example.org&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;ABC Widgets&#39;</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">copyright-year</span> = <span style="color:#e6db74">&#39;2023&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">subtitle</span> = <span style="color:#e6db74">&#39;The Best Widgets on Earth&#39;</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span> = <span style="color:#e6db74">&#39;jsmith@example.org&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#39;John Smith&#39;</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">layouts</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rfc_1123</span> = <span style="color:#e6db74">&#39;Mon, 02 Jan 2006 15:04:05 MST&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rfc_3339</span> = <span style="color:#e6db74">&#39;2006-01-02T15:04:05-07:00&#39;</span>
+</span></span></code></pre></div><p>Access the custom site parameters by chaining the identifiers:</p>
+<pre tabindex="0"><code>{{ .Site.Params.subtitle }} → The Best Widgets on Earth
+{{ .Site.Params.author.name }} → John Smith
+
+{{ $layout := .Site.Params.layouts.rfc_1123 }}
+{{ .Site.Lastmod.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
+</code></pre><h4 id="params-method-on-page-object">Params method on Page object</h4>
+<p>In font matter:</p>
+<pre tabindex="0"><code>+++
+date = 2023-10-17T15:11:37-07:00
+title = &#39;Annual conference&#39;
+[params]
+  display_related = true
+  key-with-hyphens = &#39;must use index function&#39;
+  [params.author]
+    email = &#39;jsmith@example.org&#39;
+    name = &#39;John Smith&#39;
++++
+</code></pre><p>Access the custom fields by chaining the identifiers when needed:</p>
+<pre tabindex="0"><code>{{ .Params.display_related }} → true
+{{ .Params.author.email }} → jsmith@example.org
+{{ .Params.author.name }} → John Smith
+</code></pre><h3 id="lookup-order">Lookup Order</h3>
+<p>Lookup order is just hugo deciding which template to follow to design a specific page.</p>
+<ol>
+<li>
+<p>The Strict Path Match (Highest Priority)Hugo looks for a template folder that exactly matches the physical directory nesting of the content</p>
+<ul>
+<li>layouts/store/shoes/single.html</li>
+<li>layouts/store/shoes/page.html</li>
+</ul>
+</li>
+<li>
+<p>The Type/Layout Parameter Match If a strict path layout doesn&rsquo;t exist, Hugo looks for an explicit classification. This is either inferred by the top-level section (store) or explicitly declared via type or layout variables in the front matter</p>
+<ul>
+<li>layouts/store/single.html</li>
+<li>layouts/store/page.html</li>
+</ul>
+</li>
+<li>
+<p>The Root Fallback (Lowest Priority)If no directories match the path or type parameters, Hugo drops back to the absolute root of your layouts/ directory</p>
+<ul>
+<li>layouts/single.html</li>
+<li>layouts/page.html</li>
+</ul>
+</li>
+</ol>
+<h2 id="now-challenge-myself-to-understand-everything-that-i-have-used-to-make-this-website">Now Challenge myself to understand everything that I have used to make this website.</h2></section>
 
   
 </article>
