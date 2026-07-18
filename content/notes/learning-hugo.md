@@ -101,3 +101,167 @@ git branch -D site-deploy
 
 echo "Deployed succesfully"
 ```
+
+## Understanding Hugo
+
+### Template
+
+`{{ $v1 := 6}}` variable declare
+
+(.) represents current context.
+
+Within a range or with block you can access the context passed into the template by prepending a dollar sign ($) to the dot:
+
+```
+<h2>{{ .Title }}</h2>
+{{ with "foo" }}
+  <p>{{ $.Title }} - {{ . }}</p>
+{{ end }}
+```
+Double quotes for interpreted string literals `{{ print "Hello world\u0021" }} → Hello world!`
+
+backticks for row string literals ```{{ print `Hello world\u0021` }} → Hello world\u0021 ```
+
+#### pipes
+
+These pairs are equivilant
+```
+{{ strings.ToLower "Hugo" }} → hugo
+{{ "Hugo" | strings.ToLower }} → hugo
+
+{{ strings.TrimSuffix "o" (strings.ToLower "Hugo") }} → hug
+{{ "Hugo" | strings.ToLower | strings.TrimSuffix "o" }} → hug
+
+{{ mul 6 (add 2 5) }} → 42
+{{ 5 | add 2 | mul 6 }} → 42
+```
+**Remember that the piped value becomes the final argument to the function or method to which you are piping.**
+
+With variables that represent a map or object, **chain identifiers (connect with .)** to return the desired value or to access the desired method.
+```
+{{ $map := dict "a" "foo" "b" "bar" "c" "baz" }}
+{{ $map.c }} → baz
+
+{{ $homePage := .Site.Home }}
+{{ $homePage.Title }} → My Homepage
+
+```
+
+#### functions
+
+Takes one/more arguments and returns a value. Frequently used functions have aliases. `{{ $ total := add 1 2 3 4}}`
+
+#### methods
+
+Associated with and object, takes zero or more arguments and either returns a value or performs an action.
+
+Page object has Date, Params, Title, etc methods. 
+```
+{{ .Site.Title }} → My Site Title
+{{ .Page.Title }} → My Page Title
+```
+
+if the context is Page object then 
+```
+{{ .Title }} → My Page Title
+```
+
+if the methode take argument then
+```
+{{ $page := .Page.GetPage "/books/les-miserables" }}
+{{ $page.Title }} → Les Misérables
+```
+
+#### comments
+
+```
+{{/* This is an inline comment. */}}
+
+{{/*
+This is a block comment.
+*/}}
+
+{{- /*
+This is a block comment with
+adjacent whitespace removed.
+*/ -}}
+```
+
+#### include partials
+
+```
+{{ partial "google_analytics.html" . }}
+{{ partial "opengraph" . }}
+{{ partial "breadcrumbs.html" . }}
+{{ partialCached "css.html" . }}
+```
+
+#### Params method on Site object.
+
+```hugo.toml
+baseURL = 'https://example.org'
+title = 'ABC Widgets'
+[params]
+  copyright-year = '2023'
+  subtitle = 'The Best Widgets on Earth'
+  [params.author]
+    email = 'jsmith@example.org'
+    name = 'John Smith'
+  [params.layouts]
+    rfc_1123 = 'Mon, 02 Jan 2006 15:04:05 MST'
+    rfc_3339 = '2006-01-02T15:04:05-07:00'
+```
+
+Access the custom site parameters by chaining the identifiers:
+
+```
+{{ .Site.Params.subtitle }} → The Best Widgets on Earth
+{{ .Site.Params.author.name }} → John Smith
+
+{{ $layout := .Site.Params.layouts.rfc_1123 }}
+{{ .Site.Lastmod.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
+```
+
+#### Params method on Page object
+
+In font matter:
+
+```
++++
+date = 2023-10-17T15:11:37-07:00
+title = 'Annual conference'
+[params]
+  display_related = true
+  key-with-hyphens = 'must use index function'
+  [params.author]
+    email = 'jsmith@example.org'
+    name = 'John Smith'
++++
+```
+
+Access the custom fields by chaining the identifiers when needed:
+
+```
+{{ .Params.display_related }} → true
+{{ .Params.author.email }} → jsmith@example.org
+{{ .Params.author.name }} → John Smith
+```
+
+### Lookup Order
+
+Lookup order is just hugo deciding which template to follow to design a specific page.
+
+1. The Strict Path Match (Highest Priority)Hugo looks for a template folder that exactly matches the physical directory nesting of the content
+    - layouts/store/shoes/single.html
+    - layouts/store/shoes/page.html
+ 
+3. The Type/Layout Parameter Match If a strict path layout doesn't exist, Hugo looks for an explicit classification. This is either inferred by the top-level section (store) or explicitly declared via type or layout variables in the front matter
+    - layouts/store/single.html
+    - layouts/store/page.html
+
+5. The Root Fallback (Lowest Priority)If no directories match the path or type parameters, Hugo drops back to the absolute root of your layouts/ directory
+    - layouts/single.html
+    - layouts/page.html
+
+
+## Now Challenge myself to understand everything that I have used to make this website.

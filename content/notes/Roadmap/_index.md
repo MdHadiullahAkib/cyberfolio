@@ -2,7 +2,7 @@
 title = 'Roadmap'
 date = 2026-06-08T12:06:00+06:00
 tags = ["note", "roadmap"]
-type = "note"
+type = "roadmap"
 roadmap_section = ""
 roadmap_topic = ""
 tools = []

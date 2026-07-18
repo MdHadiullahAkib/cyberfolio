@@ -1,6 +1,6 @@
 baseURL = 'https://mdhadiullahakib.github.io/cyberfolio/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+locale = 'en-us'
+title = 'My portfolio and documentation site'
 
 [params]
   author = "Md Hadiullah Akib" 
